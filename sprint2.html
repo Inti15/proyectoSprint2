@@ -5,10 +5,10 @@
     <title> Proyecto Sprint 2</title>
   </head>
   <!--Definición del estilo del body  -->
-  <body style="background-color:#3F51B5; font-family:Verdana; color:#ffffff;">
+  <body style="background-color:#5C6BC0; font-family:Verdana; color:#ffffff;" onload="cargarPagina()">
     <h1 align="center">Trello Laboratoria Inc. </h1>
     <!-- Primera sección (visualización de las tarjetas de pendientes) -->
-    <section id="tarjetas">
+    <section id="tarjetas" style="border: 2px solid #1A237E">
 
     </section>
 
@@ -16,7 +16,7 @@
     <section id="nuevaTarjeta">
       <h3> Agregar lista </h3>
       <input type="text" id="nvaLista" placeholder="Ingresa el titulo"/>
-      <input type="button" value="Crear Lista" onclick="crearLista();"/>
+      <input type="button" value="Crear Lista" onclick="crearTarjeta();"/>
     </section>
 
     <script src="js/sprint2.js">
