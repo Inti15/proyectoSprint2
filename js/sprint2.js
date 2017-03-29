@@ -1,19 +1,19 @@
 // alert("Bienvenido");
-var contenedor, tarjeta, tituloT, borrarElem,saltoLinea;
+var contenedor, tarjeta, tituloT, borrarElem,saltoLinea, linea, agregarItems, itemsLista;
 var cont = 0;//Contador auxiliar para asignar id´s dinámicamente
 
-function cargarPagina(){
+// function cargarPagina(){
+
+// }
+
+function crearTarjeta(){
+  // Se crean los elementos del HTML(<section id = tarjetas>) dinámicamente
+  cont++;
   contenedor = document.getElementById("tarjetas");
   tarjeta = document.createElement("span");
   tituloT = document.createElement("h4");
   borrarElem = document.createElement("input");
   saltoLinea = document.createElement("br");
-
-}
-
-function crearTarjeta(){
-  // Se crean los elementos del HTML(<section id = tarjetas>) dinámicamente
-  cont++;
 // Se asigna valores a los elementos y se anidan al elementoPadre correspondiente
   tituloT.innerText = document.getElementById("nvaLista").value;
   tarjeta.id = "tarjeta"+cont;
@@ -30,20 +30,20 @@ function crearTarjeta(){
 
   document.getElementById("nvaLista").value = "";
 
-crearLista(cont);
+  crearLista(cont);
 }
 
 function crearLista(cont){
   // Se crean los elementos internos de la variable tarjeta(<span>)
-  var agregarItems = document.createElement("span");
+  agregarItems = document.createElement("span");
   var textoItem = document.createElement("input");
   var botonItem = document.createElement("input");
-  var linea = document.createElement("hr");
+  linea = document.createElement("hr");
 
   textoItem.placeholder = "Ingresa tu pendiente";
   botonItem.type = "button";
   botonItem.value = "Agregar Pendiente",
-  botonItem.onclick = crearItems();
+  // botonItem.onclick = crearItems();
 
   agregarItems.appendChild(textoItem);
   agregarItems.appendChild(botonItem);
@@ -57,18 +57,20 @@ function crearLista(cont){
 
 function crearItems(contenido) {
   console.log(contenido);
+  itemsLista = document.createElement("span");
   var lista = document.createElement("ul");
   var nvoItem = document.createElement("li");
 
-  // lista.appendChild(nvoItem);
-  // agregarItems.appendChild(lista);
+  nvoItem.innerText = contenido;
+  lista.appendChild(nvoItem);
+  itemsLista.appendChild(lista);
+  agregarItems.appendChild(itemsLista);
+  // agregarItems.insertBefore(itemsLista,agregarItems);
 }
 
 function borrar(id) {
-  console.log(id);
-  alert("¿¿¿Estás seguro que quieres borar tu lista???")
+  //  console.log(id);
+  // alert("¿¿¿Estás seguro que quieres borar tu lista???");
   // var tarjetaAborar = document.getElementById(id);
   //   contenedor.removeChild(tarjetaAborar);
-
-
 }
